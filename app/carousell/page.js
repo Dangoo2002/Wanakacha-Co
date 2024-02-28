@@ -1,7 +1,7 @@
-/* eslint-disable @next/next/no-img-element */
 // components/Section.js
 import React from "react";
-import Link from "next/link"; 
+import PropTypes from "prop-types"; // Import PropTypes
+import Link from "next/link";
 import styles from "./carousell.module.css";
 import { GoArrowRight } from "react-icons/go";
 import Image from 'next/image';
@@ -25,6 +25,12 @@ const Section = ({ title, description }) => {
       />
     </div>
   );
+};
+
+// Define PropTypes for title and description
+Section.propTypes = {
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
 };
 
 export default Section;
