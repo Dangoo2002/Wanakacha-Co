@@ -1,0 +1,76 @@
+.bdy{
+  background-color: white;
+  height: 150vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.applicationContainer {
+  width: 40%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #e2d9d9b4;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  top: 0px;
+  left: 40px;
+  font-weight: bold;
+
+}
+.coder {
+  width: 50%; 
+  margin-right: 20px; 
+ 
+}
+.title {
+  text-align: center;
+  color: #333;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.formGroup {
+  margin-bottom: 20px;
+}
+
+.label {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.input {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.submitButton {
+  background-color: #1186d4;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 20px;
+}
+
+.submitButton:hover {
+  background-color: #0d21d8;
+}
+
+.errorWrapper {
+  color: red;
+  margin-top: 5px; 
+}
+
+

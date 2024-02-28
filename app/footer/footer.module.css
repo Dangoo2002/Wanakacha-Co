@@ -1,0 +1,72 @@
+/* components/Footer.module.css */
+.footer {
+    background-color: rgb(5, 1, 29);
+    color: #fff;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+      "Lucida Sans", Arial, sans-serif;
+  }
+  
+  .column {
+    max-width: 300px;
+    margin-bottom: 20px;
+  }
+  
+  .socialMediaList {
+    list-style: none;
+    padding: 0;
+    display: flex;
+  }
+  .aboutUsHeader,
+  .contactInfoHeader,
+  .socialMediaHeader,
+  .communityHeader {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  .socialMediaList li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .socialMediaList li :hover {
+    color: orangered;
+  }
+  .socialMediaList li svg {
+    margin-right: 10px;
+  }
+  .footerLine {
+    width: 100%;
+    border: 1px solid #ccc;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .trademark {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 14px;
+    color: white;
+  }
+  @media only screen and (max-width: 320px) {
+    .footer {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .column {
+      max-width: 100%; /* Adjust for full-width on small screens */
+    }
+  
+    .socialMediaList {
+      justify-content: center;
+    }
+  
+    .socialMediaList li {
+      margin: 0 10px; /* Add some spacing between social media links */
+    }
+  }
+  

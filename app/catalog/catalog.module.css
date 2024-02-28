@@ -1,0 +1,94 @@
+/* components/CourseCatalog.module.css */
+.courseCatalog {
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: rgba(249, 252, 252, 0.89);
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  color: black;
+}
+
+.courseCard {
+  background-color: rgba(240, 248, 255, 0.568);
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: black;
+  width: calc(33.33% - 20px); /* 20px margin between cards, adjust as needed */
+  margin-right: 20px; /* Margin between cards */
+  display: inline-block;
+  vertical-align: top;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.courseCatalogTitle {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 30px;
+  font-weight: bolder;
+}
+
+.courseTitle {
+  margin-bottom: 10px;
+  font-weight: bolder;
+
+}
+
+.courseDescription {
+  color: black;
+}
+
+.languages {
+  margin-top: 10px;
+}
+.arrowIcon {
+  font-size: 2px; /* Adjust the size as needed */
+  margin-left: 1px;
+  position: relative;
+}
+.learnMoreButton {
+  position: relative;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #018136;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+ 
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 320px) {
+  .courseCatalog {
+    padding: 20px;
+  }
+
+  .courseCard {
+    width: 100%; /* Full width on small screens */
+    margin-right: 0; /* No margin between cards on small screens */
+  }
+
+  .courseCatalogTitle {
+    font-size: 24px;
+  }
+
+  .courseTitle {
+    font-size: 18px;
+  }
+
+  .courseDescription {
+    font-size: 14px;
+  }
+
+  .learnMoreButton {
+    padding: 8px 15px;
+    font-size: 14px;
+    bottom: 10px;
+  }
+}

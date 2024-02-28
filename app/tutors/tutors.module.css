@@ -1,0 +1,89 @@
+/* styles/TeamSection.module.css */
+
+.teamSection {
+  width: 100%;
+
+  margin: 0 auto;
+  padding: 40px;
+  background-color: #f0f8ff; /* Light blue background color, adjust as needed */
+}
+
+.sectionTitle {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 20px;
+  color: black;
+  font-weight: bold;
+}
+
+.teamGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.teamCard {
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  background-color: #e2eaec;
+  width: 100%; /* Set a fixed width for the cards */
+  height: 290px; /* Set a fixed height for the cards */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.memberName{
+  margin: 10px 0;
+  font-size: 1.2rem;
+  color: black;
+  font-weight: bold;
+}
+.memberImage {
+  width: 50px; /* Adjust the width as needed */
+  height: 50px; /* Set the same height as the width for a perfect circle */
+  border-radius: 50%;
+}
+
+
+.memberTitle {
+  margin: 10px 0;
+  font-size: 1.2rem;
+  color: black;
+
+}
+
+.memberDescription {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Responsive styles for small screens */
+@media only screen and (max-width: 320px) {
+  .teamSection {
+    padding: 20px;
+  }
+
+  .teamCard {
+    padding: 15px;
+  }
+
+  .sectionTitle {
+    font-size: 24px;
+  }
+
+  .memberTitle {
+    font-size: 18px;
+  }
+
+  .memberDescription {
+    font-size: 14px;
+  }
+  .teamGrid {
+    grid-template-columns: 1fr; /* Change to a single column on small screens */
+  }
+
+  .teamCard {
+    width: 100%; /* Full width on small screens */
+  }
+}

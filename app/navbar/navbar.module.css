@@ -1,0 +1,101 @@
+/* components/Navbar.module.css */
+.navbar {
+    background-color: rgb(9, 3, 53);
+    padding: 10px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    z-index: 10;
+    width: 100%;
+    position: fixed;
+  }
+  
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 5px 0;
+  transition: 0.4s;
+}
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  .logo:hover{
+    color: orangered;
+  }
+  .title {
+    font-size: 30px;
+    position: relative;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+      "Lucida Sans", Arial, sans-serif;
+  }
+  .logo img {
+    width: 60px; /* Adjust the logo width as needed */
+    height: 60px; /* Ensure the height matches the width for a perfect circle */
+    margin-right: 10px;
+    border-radius: 50%; /* Make it a circle */
+  }
+  .nav-links {
+    list-style: none;
+    display: flex;
+  }
+  
+  .nav-links li {
+    margin-right: 20px;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+      "Lucida Sans", Arial, sans-serif;
+  }
+  .nav-links a:hover {
+    color: orangered;
+  }
+  @media (max-width: 720px) {
+    .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .nav-links {
+      flex-direction: column;
+      align-items: flex-start;
+      margin-top: 10px;
+      display: none; /* Hide the links by default on small screens */
+    }
+  
+    .nav-links.show {
+      display: flex; /* Show the links when the menu is open */
+    }
+  
+    .hamburger {
+      display: flex;
+    }
+    .nav-links {
+      flex-direction: column;
+      align-items: flex-start;
+      margin-top: 10px; /* Adjust the spacing between links as needed */
+    }
+  
+    .nav-links li {
+      margin-right: 0;
+      margin-bottom: 10px; /* Adjust the spacing between links as needed */
+    }
+  }
+  
