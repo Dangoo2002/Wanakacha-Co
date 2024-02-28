@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 // components/TeamSection.js
 import React from 'react';
 import styles from './tutors.module.css';

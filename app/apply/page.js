@@ -1,6 +1,5 @@
-// ApplicationPage.js
-"use client";
 
+"use client";
 import React, { useState } from "react";
 import styles from "./apply.module.css";
 import Image from 'next/image';
@@ -15,7 +14,8 @@ const ApplicationPage = () => {
     age: "",
   });
 
-  // Define formErrors state
+  
+
   const [formErrors, setFormErrors] = useState({
     firstName: false,
     lastName: false,
@@ -24,16 +24,17 @@ const ApplicationPage = () => {
     age: false,
   });
 
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
-    // Reset the error when the user starts typing in the field
+   
     setFormErrors({ ...formErrors, [e.target.name]: false });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Validate form fields
+    
     const newFormErrors = {};
     for (const key in formData) {
       if (formData[key].trim() === "") {
@@ -41,13 +42,14 @@ const ApplicationPage = () => {
       }
     }
 
-    // Display errors if any field is empty
+   
     if (Object.keys(newFormErrors).length > 0) {
       setFormErrors(newFormErrors);
       return;
     }
 
-    // Your submit logic here (e.g., save to database or perform other actions)
+    
+    
     console.log("Form submitted successfully!");
   };
 
