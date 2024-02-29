@@ -1,10 +1,21 @@
 .logos {
-    color: whitesmoke;
-    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-      "Lucida Sans", Arial, sans-serif;
-      position: relative;
-      top: 90px;
-      font-weight: bold;
-      
+  color: whitesmoke;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  position: relative;
+  top: 90px;
+  font-weight: bold;
+}
+/* Media query for screens smaller than 760px */
+@media screen and (max-width: 760px) {
+  .logos {
+    top: 150px; /* Adjusted position for better visibility on smaller screens */
   }
-  
+}
+
+/* Media query for screens smaller than 468px */
+@media screen and (max-width: 468px) {
+  .logos {
+    top: 180px; /* Further adjusted position for smallest screens */
+  }
+}
