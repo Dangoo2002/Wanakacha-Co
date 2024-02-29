@@ -8,8 +8,8 @@
 }
 
 .applicationContainer {
-  width: 90%;
-  margin: 20px auto; /* Added margin for better spacing */
+  width: 40%;
+  margin: 0 auto;
   padding: 20px;
   background-color: #e2d9d9b4;
   border-radius: 10px;
@@ -76,16 +76,4 @@
   margin-top: 5px;
 }
 
-/* Media query for screens smaller than 760px */
-@media screen and (max-width: 760px) {
-  .applicationContainer {
-    width: 80%;
-  }
-}
 
-/* Media query for screens smaller than 468px */
-@media screen and (max-width: 468px) {
-  .applicationContainer {
-    width: 95%;
-  }
-}
