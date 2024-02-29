@@ -1,74 +1,121 @@
 /* components/AuthorSection.module.css */
 .authorSection {
-    width: 100%;
-   
-    margin: 0 auto;
-    padding: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-      "Lucida Sans", Arial, sans-serif;
-      background-color: rgba(245, 245, 245, 0.788);
-      font-weight: bold;
+  width: 100%;
+
+  margin: 0 auto;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  background-color: rgba(245, 245, 245, 0.788);
+  font-weight: bold;
+}
+
+.authorPhoto {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.authorInfo {
+  max-width: 600px;
+  text-align: center;
+  color: black;
+  box-shadow: inset;
+  border-radius: 20px;
+  background-color: rgba(245, 245, 220, 0.897);
+  height: 300px;
+}
+
+.authorName {
+  margin-bottom: 10px;
+  position: relative;
+  top: 40px;
+}
+
+.authorPosition {
+  color: orangered;
+  margin-bottom: 15px;
+  position: relative;
+  top: 40px;
+}
+.desc {
+  margin-bottom: 15px;
+  position: relative;
+  top: 40px;
+}
+@media only screen and (max-width: 320px) {
+  .authorSection {
+    padding: 20px;
   }
-  
+
   .authorPhoto {
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 150px; /* Adjusted width for small screens */
+    height: 150px; /* Adjusted height for small screens */
   }
-  
+
   .authorInfo {
-    max-width: 600px;
-    text-align: center;
-    color: black;
-    box-shadow: inset;
-    border-radius: 20px;
-    background-color: rgba(245, 245, 220, 0.897);
-    height: 300px;
+    max-width: 320px;
+    height: auto;
   }
-  
+
   .authorName {
-    margin-bottom: 10px;
-    position: relative;
-    top: 40px;
+    font-size: 1.2rem; /* Adjusted font size for small screens */
   }
-  
+
   .authorPosition {
-    color: orangered;
-    margin-bottom: 15px;
-    position: relative;
-    top: 40px;
+    font-size: 1rem; /* Adjusted font size for small screens */
   }
-  .desc{
-    margin-bottom: 15px;
-    position: relative;
-    top: 40px;
+}
+@media screen and (max-width: 768px) {
+  .authorSection {
+    flex-direction: column;
+    text-align: center;
   }
-  @media only screen and (max-width: 320px) {
-    .authorSection {
-      padding: 20px;
-    }
-  
-    .authorPhoto {
-      width: 150px; /* Adjusted width for small screens */
-      height: 150px; /* Adjusted height for small screens */
-    }
-  
-    .authorInfo {
-      max-width: 320px;
-      height: auto; 
-    }
-  
-    .authorName {
-      font-size: 1.2rem; /* Adjusted font size for small screens */
-    }
-  
-    .authorPosition {
-      font-size: 1rem; /* Adjusted font size for small screens */
-    }
+}
+
+/* Media query for screens smaller than 480px */
+@media screen and (max-width: 480px) {
+  .authorSection {
+    padding: 20px;
   }
-  
+}
+
+.authorPhoto {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.authorInfo {
+  max-width: 600px;
+  text-align: center;
+  color: black;
+  box-shadow: inset;
+  border-radius: 20px;
+  background-color: rgba(245, 245, 220, 0.897);
+  height: 300px;
+}
+
+.authorName,
+.authorPosition,
+.desc {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Adjust positioning for smaller screens */
+@media screen and (max-width: 768px) {
+  .authorName,
+  .authorPosition,
+  .desc {
+    position: static;
+    top: 0;
+  }
+}
