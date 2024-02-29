@@ -33,7 +33,7 @@
   box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
 
-.memberName{
+.memberName {
   margin: 10px 0;
   font-size: 1.2rem;
   color: black;
@@ -45,12 +45,10 @@
   border-radius: 50%;
 }
 
-
 .memberTitle {
   margin: 10px 0;
   font-size: 1.2rem;
   color: black;
-
 }
 
 .memberDescription {
@@ -85,5 +83,48 @@
 
   .teamCard {
     width: 100%; /* Full width on small screens */
+  }
+}
+@media screen and (max-width: 760px) {
+  .teamGrid {
+    grid-template-columns: 1fr; /* Display one column on screens smaller than 760px */
+  }
+}
+
+.teamCard {
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  background-color: #e2eaec;
+  width: 100%; /* Set a fixed width for the cards */
+  height: 290px; /* Set a fixed height for the cards */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.memberName {
+  margin: 10px 0;
+  font-size: 1.2rem;
+  color: black;
+  font-weight: bold;
+}
+
+.memberImage {
+  width: 50px; /* Adjust the width as needed */
+  height: 50px; /* Set the same height as the width for a perfect circle */
+  border-radius: 50%;
+}
+
+/* Media query for screens smaller than 468px */
+@media screen and (max-width: 468px) {
+  .memberImage {
+    width: 40px; /* Adjust the width for smaller screens */
+    height: 40px; /* Adjust the height accordingly */
+  }
+
+  .memberName,
+  .memberTitle,
+  .memberDescription {
+    font-size: 1rem; /* Adjust the font size for smaller screens */
   }
 }

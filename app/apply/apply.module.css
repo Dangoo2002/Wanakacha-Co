@@ -1,12 +1,13 @@
-.bdy{
+.bdy {
   background-color: white;
   height: 150vh;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 .applicationContainer {
-  width: 40%;
+  width: 90%;
   margin: 0 auto;
   padding: 20px;
   background-color: #e2d9d9b4;
@@ -14,15 +15,15 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   position: relative;
   top: 0px;
-  left: 40px;
+  left: 0;
   font-weight: bold;
+}
 
-}
 .coder {
-  width: 50%; 
-  margin-right: 20px; 
- 
+  width: 100%;
+  margin-right: 0;
 }
+
 .title {
   text-align: center;
   color: #333;
@@ -51,6 +52,7 @@
   border: 1px solid #ccc;
   border-radius: 5px;
   margin-bottom: 10px;
+  color: black;
 }
 
 .submitButton {
@@ -70,7 +72,19 @@
 
 .errorWrapper {
   color: red;
-  margin-top: 5px; 
+  margin-top: 5px;
 }
 
+/* Media query for screens smaller than 760px */
+@media screen and (max-width: 760px) {
+  .applicationContainer {
+    width: 80%;
+  }
+}
 
+/* Media query for screens smaller than 468px */
+@media screen and (max-width: 468px) {
+  .applicationContainer {
+    width: 95%; /* Further adjusted for better responsiveness on smallest screens */
+  }
+}
