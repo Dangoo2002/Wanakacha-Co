@@ -1,4 +1,3 @@
-/* components/CourseCatalog.module.css */
 .courseCatalog {
   width: 100%;
   margin: 0 auto;
@@ -16,8 +15,8 @@
   margin-bottom: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   color: black;
-  width: calc(33.33% - 20px); /* 20px margin between cards, adjust as needed */
-  margin-right: 20px; /* Margin between cards */
+  width: calc(33.33% - 20px); 
+  margin-right: 20px; 
   display: inline-block;
   vertical-align: top;
   box-sizing: border-box;
@@ -44,7 +43,7 @@
   margin-top: 10px;
 }
 .arrowIcon {
-  font-size: 2px; /* Adjust the size as needed */
+  font-size: 2px;
   margin-left: 1px;
   position: relative;
 }
@@ -69,8 +68,8 @@
   }
 
   .courseCard {
-    width: 100%; /* Full width on small screens */
-    margin-right: 0; /* No margin between cards on small screens */
+    width: 100%; 
+    margin-right: 0; 
   }
 
   .courseCatalogTitle {
@@ -93,15 +92,15 @@
 }
 @media screen and (max-width: 768px) {
   .courseCard {
-    width: calc(50% - 20px); /* Two cards per row with 20px margin between */
-    margin-right: 0; /* No margin on the right for smaller screens */
+    width: calc(50% - 20px);
+    margin-right: 0;
   }
 }
 
-/* Media query for screens smaller than 480px */
+
 @media screen and (max-width: 480px) {
   .courseCard {
-    width: 100%; /* Full width for one card per row */
-    margin-right: 0; /* No margin on the right for smallest screens */
+    width: 100%; 
+    margin-right: 0; 
   }
 }
