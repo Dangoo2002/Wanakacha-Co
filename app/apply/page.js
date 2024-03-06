@@ -1,9 +1,25 @@
 
 "use client";
-import React, { useState } from "react";
-import styles from "./apply.module.css";
+import { useEffect, useState } from 'react';
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth'; 
+import styles from './apply.module.css';
 import Image from 'next/image';
 import prog from '../../public/cod.png';
+import '@fortawesome/fontawesome-free/css/all.min.css';
+
+const firebaseConfig = {
+  apiKey: 'AIzaSyCb-4MDprKwIxpR0q0hkI7q_jEnpn4wTls',
+  authDomain: 'wanakacha-and-co.firebaseapp.com',
+  projectId: 'wanakacha-and-co',
+  storageBucket: 'YOUR_STORAGE_BUCKET',
+  messagingSenderId: 'YOUR_MESSAGING_SENDER_ID',
+  appId: 'YOUR_APP_ID',
+};
+
+if (!firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig);
+}
 
 const ApplicationPage = () => {
   const [formData, setFormData] = useState({
@@ -52,6 +68,40 @@ const ApplicationPage = () => {
     
     console.log("Form submitted successfully!");
   };
+  useEffect(() => {
+    // Check if a user is already signed in
+    const unsubscribe = firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        // User is signed in
+        console.log('User is signed in:', user);
+      } else {
+        // User is signed out
+        console.log('User is signed out');
+      }
+    });
+
+    return () => unsubscribe();
+  }, []);
+
+  const handleGitHubSignIn = async () => {
+    const provider = new firebase.auth.GithubAuthProvider();
+    try {
+      await firebase.auth().signInWithPopup(provider);
+      console.log('GitHub Sign In Successful');
+    } catch (error) {
+      console.error('GitHub Sign In Error:', error.message);
+    }
+  };
+
+  const handleGoogleSignIn = async () => {
+    const provider = new firebase.auth.GoogleAuthProvider();
+    try {
+      await firebase.auth().signInWithPopup(provider);
+      console.log('Google Sign In Successful');
+    } catch (error) {
+      console.error('Google Sign In Error:', error.message);
+    }
+  };
 
   return (
     <div  className={styles.bdy}>
@@ -62,6 +112,24 @@ const ApplicationPage = () => {
       />
     <div className={styles.applicationContainer}>
       <h1 className={styles.title}>Apply Now</h1>
+       
+          {/* Authentication Buttons with Icons */}
+          <div className={styles.signInButtons}>
+          <button onClick={handleGitHubSignIn}>
+            <span className="icon">
+              <i className="fab fa-github"></i> 
+            </span>
+            
+          </button>
+
+          <button onClick={handleGoogleSignIn}>
+            <span className="icon">
+              <i className="fab fa-google"></i> 
+            </span>
+          
+          </button>
+        </div>
+
       <form className={styles.form} onSubmit={handleSubmit}>
         <div className={styles.formGroup}>
           <label htmlFor="firstName" className={styles.label}>
@@ -128,7 +196,7 @@ const ApplicationPage = () => {
         </div>
 
         <button className={styles.submitButton} type="submit">
-          Submit
+          Apply
         </button>
       </form>
     </div>

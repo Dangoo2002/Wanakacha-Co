@@ -11,6 +11,8 @@
     z-index: 10;
     width: 100%;
     position: fixed;
+    border-bottom-style: double;
+    border-bottom-color: white;
   }
   
 .hamburger {
