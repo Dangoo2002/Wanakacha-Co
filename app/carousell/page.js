@@ -1,6 +1,6 @@
 // components/Section.js
 import React from "react";
-import PropTypes from "prop-types"; // Import PropTypes
+import PropTypes from "prop-types";
 import Link from "next/link";
 import styles from "./carousell.module.css";
 import { GoArrowRight } from "react-icons/go";
