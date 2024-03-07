@@ -1,4 +1,3 @@
-// components/Section.js
 import React from "react";
 import PropTypes from "prop-types";
 import Link from "next/link";
@@ -33,4 +32,5 @@ Section.propTypes = {
   description: PropTypes.string.isRequired,
 };
 
+// Export Section as the default export
 export default Section;
