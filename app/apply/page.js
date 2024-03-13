@@ -7,6 +7,9 @@ import styles from './apply.module.css';
 import Image from 'next/image';
 import prog from '../../public/cod.png';
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import { useRouter } from 'next/navigation';
+import Link from 'next/link';
+
 
 const firebaseConfig = {
   apiKey: 'AIzaSyCb-4MDprKwIxpR0q0hkI7q_jEnpn4wTls',
@@ -31,6 +34,7 @@ const ApplicationPage = () => {
   });
 
   
+ 
 
   const [formErrors, setFormErrors] = useState({
     firstName: false,
@@ -46,36 +50,42 @@ const ApplicationPage = () => {
    
     setFormErrors({ ...formErrors, [e.target.name]: false });
   };
-
+  const [showSuccessBanner, setShowSuccessBanner] = useState(false);
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    
+  
     const newFormErrors = {};
+    let formIsValid = true; 
+  
+   
     for (const key in formData) {
       if (formData[key].trim() === "") {
         newFormErrors[key] = true;
+        formIsValid = false; 
       }
     }
+  
 
-   
-    if (Object.keys(newFormErrors).length > 0) {
-      setFormErrors(newFormErrors);
-      return;
+    setFormErrors(newFormErrors);
+  
+    if (formIsValid) {
+      console.log('Form submitted successfully!');
+      setShowSuccessBanner(true);
+      setTimeout(() => setShowSuccessBanner(false), 2000);
+      router.push('/');
+    } else {
+      console.log('Form is not valid. Please fill in all required fields.');
     }
-
-    
-    
-    console.log("Form submitted successfully!");
   };
+  
   useEffect(() => {
-    // Check if a user is already signed in
+  
     const unsubscribe = firebase.auth().onAuthStateChanged((user) => {
       if (user) {
-        // User is signed in
+        
         console.log('User is signed in:', user);
       } else {
-        // User is signed out
+     
         console.log('User is signed out');
       }
     });
@@ -83,11 +93,14 @@ const ApplicationPage = () => {
     return () => unsubscribe();
   }, []);
 
+  const router = useRouter();
+  
   const handleGitHubSignIn = async () => {
     const provider = new firebase.auth.GithubAuthProvider();
     try {
       await firebase.auth().signInWithPopup(provider);
       console.log('GitHub Sign In Successful');
+      router.push('/');
     } catch (error) {
       console.error('GitHub Sign In Error:', error.message);
     }
@@ -98,6 +111,7 @@ const ApplicationPage = () => {
     try {
       await firebase.auth().signInWithPopup(provider);
       console.log('Google Sign In Successful');
+      router.push('/');
     } catch (error) {
       console.error('Google Sign In Error:', error.message);
     }
@@ -194,11 +208,15 @@ const ApplicationPage = () => {
             {formErrors.age && <span className={`${styles.errorMessage} ${styles.red}`}>Please enter your age.</span>}
           </div>
         </div>
-
+<Link href='/'>
         <button className={styles.submitButton} type="submit">
           Apply
         </button>
+        </Link>
       </form>
+      {showSuccessBanner && (
+          <div className={styles.successBanner}>Successfully applied</div>
+        )}
     </div>
     </div>
   );
