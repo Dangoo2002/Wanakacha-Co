@@ -116,6 +116,9 @@
     left: 100px; 
     top: 30px; 
   }
+  @keyframes l27 {
+    100% {transform: rotate(1turn)}
+  }
 }
 
 
@@ -134,6 +137,9 @@
     height: 3px;
     left: 150px; 
     top: 50px; 
+  }
+  @keyframes l27 {
+    100% {transform: rotate(1turn)}
   }
   .overlay p {
     font-size: 0.8rem; 
