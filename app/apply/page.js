@@ -127,7 +127,6 @@ const ApplicationPage = () => {
     <div className={styles.applicationContainer}>
       <h1 className={styles.title}>Apply Now</h1>
        
-          {/* Authentication Buttons with Icons */}
           <div className={styles.signInButtons}>
           <button onClick={handleGitHubSignIn}>
             <span className="icon">

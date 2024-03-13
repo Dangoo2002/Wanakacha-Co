@@ -6,7 +6,11 @@ import { GoArrowRight } from "react-icons/go";
 import Image from 'next/image';
 import back from '../../public/back.jpg';
 
-const Section = ({ title, description }) => {
+const Section = () => {
+
+  const title = "Discover the World of Coding";
+  const description = "Unlock endless possibilities with code";
+
   return (
     <div className={styles.section}>
       <div className={styles.overlay}>
@@ -26,11 +30,5 @@ const Section = ({ title, description }) => {
   );
 };
 
-// Define PropTypes for title and description
-Section.propTypes = {
-  title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-};
 
-// Export Section as the default export
 export default Section;

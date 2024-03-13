@@ -17,11 +17,7 @@ const HomePage = () => {
       <Navbar />
       <div className={styles.logos}>
         <h1>Dreaming the code,coding the dream.</h1>
-        <Section
-          title="Discover the World of Coding"
-          description="Unlock endless possibilities with code"
-          
-        />
+        <Section />
         <Image src={back} width={200} height={200} alt="yoo"/>
         <CourseCatalog />
         <Teachers />
