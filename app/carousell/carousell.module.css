@@ -13,6 +13,9 @@
   height: 4px;
   border-radius: 50%;
   color: #25b09b;
+  position: relative;
+  left: 250px;
+  top: 100px;
   box-shadow: 
     calc(1*var(--d))      calc(0*var(--d))     0 0,
     calc(0.707*var(--d))  calc(0.707*var(--d)) 0 1px,
@@ -107,6 +110,12 @@
   .learnMoreButton {
     top: 20px;
   }
+  .loader {
+    width: 2px;
+    height: 2px;
+    left: 100px; 
+    top: 30px; 
+  }
 }
 
 
@@ -120,7 +129,12 @@
     font-size: 1.5rem; 
     top: 5px; 
   }
-
+  .loader {
+    width: 3px;
+    height: 3px;
+    left: 150px; 
+    top: 50px; 
+  }
   .overlay p {
     font-size: 0.8rem; 
     top: 15px; 
