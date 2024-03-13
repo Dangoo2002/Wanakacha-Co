@@ -2,7 +2,7 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import firebase from 'firebase/compat/app';
-import 'firebase/compat/auth'; 
+import 'firebase/compat/auth';
 import styles from './apply.module.css';
 import Image from 'next/image';
 import prog from '../../public/cod.png';
@@ -44,7 +44,7 @@ const ApplicationPage = () => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
     setFormErrors({ ...formErrors, [name]: value.trim() === "" });
-};
+  };
 
 
   const [showSuccessBanner, setShowSuccessBanner] = useState(false);
@@ -54,12 +54,24 @@ const ApplicationPage = () => {
     e.preventDefault();
 
     const requiredFields = ['firstName', 'lastName', 'email'];
-const hasEmptyFields = requiredFields.some(field => formData[field].trim() === '');
-if (hasEmptyFields) {
-    console.error('Form is not valid. Please fill in all required fields.');
-    return;
-}
+    const newFormErrors = {};
+    let hasEmptyFields = false;
 
+    requiredFields.forEach(field => {
+      if (formData[field].trim() === '') {
+        newFormErrors[field] = true;
+        hasEmptyFields = true;
+      } else {
+        newFormErrors[field] = false;
+      }
+    });
+
+    setFormErrors({ ...formErrors, ...newFormErrors });
+
+    if (hasEmptyFields) {
+      console.error('Form is not valid. Please fill in all required fields.');
+      return;
+    }
 
     console.log('Form submitted successfully!');
     setShowSuccessBanner(true);
@@ -69,8 +81,8 @@ if (hasEmptyFields) {
       router.push('/');
     }, 2000);
   };
-  
-  
+
+
   useEffect(() => {
     const unsubscribe = firebase.auth().onAuthStateChanged((user) => {
       if (user) {
@@ -113,12 +125,12 @@ if (hasEmptyFields) {
         <div className={styles.signInButtons}>
           <button onClick={handleGitHubSignIn}>
             <span className="icon">
-              <i className="fab fa-github"></i> 
+              <i className="fab fa-github"></i>
             </span>
           </button>
           <button onClick={handleGoogleSignIn}>
             <span className="icon">
-              <i className="fab fa-google"></i> 
+              <i className="fab fa-google"></i>
             </span>
           </button>
         </div>
@@ -136,7 +148,11 @@ if (hasEmptyFields) {
               onChange={handleChange}
             />
             <div className={styles.errorWrapper}>
-              {formErrors.firstName && <span className={`${styles.errorMessage} ${styles.red}`}>Please enter your first name.</span>}
+              {formErrors.firstName && (
+                <span className={`${styles.errorMessage} ${styles.red}`}>
+                  Please enter your first name.
+                </span>
+              )}
             </div>
           </div>
           <div className={styles.formGroup}>
@@ -152,7 +168,11 @@ if (hasEmptyFields) {
               onChange={handleChange}
             />
             <div className={styles.errorWrapper}>
-              {formErrors.lastName && <span className={`${styles.errorMessage} ${styles.red}`}>Please enter your last name.</span>}
+              {formErrors.lastName && (
+                <span className={`${styles.errorMessage} ${styles.red}`}>
+                  Please enter your last name.
+                </span>
+              )}
             </div>
           </div>
           <div className={styles.formGroup}>
@@ -168,7 +188,11 @@ if (hasEmptyFields) {
               onChange={handleChange}
             />
             <div className={styles.errorWrapper}>
-              {formErrors.email && <span className={`${styles.errorMessage} ${styles.red}`}>Please enter a valid email address.</span>}
+              {formErrors.email && (
+                <span className={`${styles.errorMessage} ${styles.red}`}>
+                  Please enter a valid email address.
+                </span>
+              )}
             </div>
           </div>
           <button className={styles.submitButton} type="submit">
