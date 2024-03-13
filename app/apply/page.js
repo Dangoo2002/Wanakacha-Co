@@ -41,20 +41,29 @@ const ApplicationPage = () => {
   });
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-    setFormErrors({ ...formErrors, [e.target.name]: false });
-  };
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+    setFormErrors({ ...formErrors, [name]: value.trim() === "" });
+};
+
 
   const [showSuccessBanner, setShowSuccessBanner] = useState(false);
   const router = useRouter();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-  
+
+    const requiredFields = ['firstName', 'lastName', 'email'];
+const hasEmptyFields = requiredFields.some(field => formData[field].trim() === '');
+if (hasEmptyFields) {
+    console.error('Form is not valid. Please fill in all required fields.');
+    return;
+}
+
+
     console.log('Form submitted successfully!');
     setShowSuccessBanner(true);
-  
-  
+
     setTimeout(() => {
       setShowSuccessBanner(false);
       router.push('/');
@@ -123,6 +132,7 @@ const ApplicationPage = () => {
               type="text"
               id="firstName"
               name="firstName"
+              value={formData.firstName}
               onChange={handleChange}
             />
             <div className={styles.errorWrapper}>
@@ -138,6 +148,7 @@ const ApplicationPage = () => {
               type="text"
               id="lastName"
               name="lastName"
+              value={formData.lastName}
               onChange={handleChange}
             />
             <div className={styles.errorWrapper}>
@@ -153,36 +164,16 @@ const ApplicationPage = () => {
               type="email"
               id="email"
               name="email"
+              value={formData.email}
               onChange={handleChange}
             />
             <div className={styles.errorWrapper}>
               {formErrors.email && <span className={`${styles.errorMessage} ${styles.red}`}>Please enter a valid email address.</span>}
             </div>
           </div>
-          <div className={styles.formGroup}>
-            <label htmlFor="age" className={styles.label}>
-              Age:
-            </label>
-            <input
-              className={`${styles.input} ${formErrors.age && styles.error}`}
-              type="number"
-              id="age"
-              name="age"
-              onChange={handleChange}
-            />
-            <div className={styles.errorWrapper}>
-              {formErrors.age && <span className={`${styles.errorMessage} ${styles.red}`}>Please enter your age.</span>}
-            </div>
-          </div>
-          {Object.values(formErrors).every(value => !value) ? (
-            <button className={styles.submitButton} type="submit">
-              Apply
-            </button>
-          ) : (
-            <button className={styles.submitButton} type="submit">
-              Apply
-            </button>
-          )}
+          <button className={styles.submitButton} type="submit">
+            Apply
+          </button>
         </form>
         {showSuccessBanner && (
           <div className={styles.successBanner}>Successfully applied</div>
