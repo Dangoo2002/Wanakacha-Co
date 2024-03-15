@@ -4,7 +4,7 @@ import React from 'react';
 import styles from './tutors.module.css';
 import Image from 'next/image';
 import omollo from '../../public/omollo.png';
-import wanjiku from '../../public/Wanjiku.jpg';
+import wanjiku from '../../public/Liruga.jpeg';
 import onyango from '../../public/onyango-tate.jpg'
 import kifee from '../../public/kifee.jpeg'
 
@@ -23,7 +23,7 @@ const Teachers = () => {
       image: omollo, 
     },
     {
-      name: 'Patricia Wanjiku',
+      name: 'Purity Liruga',
       title: 'UX Designer',
       description: 'Passionate UX designer creating intuitive and user-friendly interfaces.',
       image: wanjiku, 
